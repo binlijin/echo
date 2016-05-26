@@ -18,7 +18,7 @@ public final class EchoServer {
     final int FRAME_LENGTH = 100;
     final int MAX_BUFF_SIZE = 512 * 1024;
     final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
-    final boolean OPTIMIZED = Boolean.parseBoolean(System.getProperty("optimized", "true"));
+    final boolean OPTIMIZED = Boolean.parseBoolean(System.getProperty("optimized", "false"));
 
     EventLoopGroup bossGroup = new NioEventLoopGroup(1);
     EventLoopGroup workerGroup = new NioEventLoopGroup();
