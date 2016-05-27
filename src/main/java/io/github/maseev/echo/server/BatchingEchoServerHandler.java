@@ -20,6 +20,11 @@ public class BatchingEchoServerHandler extends ChannelInboundHandlerAdapter {
   }
 
   @Override
+  public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+    buffer.release();
+  }
+
+  @Override
   public void channelRead(ChannelHandlerContext ctx, Object obj) throws Exception {
     final ByteBuf msg = (ByteBuf) obj;
 

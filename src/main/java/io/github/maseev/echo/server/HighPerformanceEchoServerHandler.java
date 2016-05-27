@@ -19,6 +19,11 @@ public class HighPerformanceEchoServerHandler extends ChannelInboundHandlerAdapt
   }
 
   @Override
+  public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+    buffer.release();
+  }
+
+  @Override
   public void channelRead(ChannelHandlerContext ctx, Object msg) {
     final ByteBuf msgBuff = (ByteBuf) msg;
 
