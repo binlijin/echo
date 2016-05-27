@@ -7,13 +7,13 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 @Sharable
-public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+public class HighPerformanceEchoServerHandler extends ChannelInboundHandlerAdapter {
 
   private final int frameSize;
 
   private final ByteBuf buffer;
 
-  public EchoServerHandler(final int frameSize, final int bufferSize) {
+  public HighPerformanceEchoServerHandler(final int frameSize, final int bufferSize) {
     this.frameSize = frameSize;
     buffer = PooledByteBufAllocator.DEFAULT.directBuffer(bufferSize);
   }
