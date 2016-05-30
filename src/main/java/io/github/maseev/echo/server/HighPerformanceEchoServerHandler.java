@@ -2,11 +2,9 @@ package io.github.maseev.echo.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.PooledByteBufAllocator;
-import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-@Sharable
 public class HighPerformanceEchoServerHandler extends ChannelInboundHandlerAdapter {
 
   private final int frameSize;
